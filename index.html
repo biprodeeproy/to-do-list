@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style.css">
+    <title>ToDo App</title>
+</head>
+<body>
+    <header id="main-header">
+        <div class="container">
+            <span>What
+                <i class="fa-solid fa-pencil"></i>
+            </span>
+            <h1>TO DO?</h1>
+
+            <form id="todo-form">
+                <input type="text" name="task-name" placeholder="e.g. Finish the project"
+                autofocus>
+                <button type="submit">Add Task</button>
+            </form>
+        </div>
+    </header>
+
+    <section>
+        <div class="container" id="main-content">
+            <ul class="stats">
+                <li>
+                    <span>Remaining</span>
+                    <span id="remaining-tasks">0</span>
+                </li>
+                <li>
+                    <span>Completed</span>
+                    <span id="completed-tasks">0</span>
+                </li>
+                <li>
+                    <span>Total</span>
+                    <span id="total-tasks">0</span>
+                </li>
+            </ul>
+
+            <ul class="todos">
+                <!-- <li>
+                    <div>
+                        <input type="checkbox" name="tasks" id="1">
+                        <span contenteditable>Task 1</span>
+                    </div>
+
+                    <button title="Remove task" class="remove-task">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" overflow="visible" stroke="black" stroke-width="10" stroke-linecap="round">
+                            <line x2="50" y2="50" />
+                            <line x1="50" y2="50" />
+                         </svg>
+                    </button>
+                </li>
+
+                <li class="complete">
+                    <div>
+                        <input type="checkbox" name="tasks" id="2">
+                        <span>Task 2</span>
+                    </div>
+
+                    <button title="Remove task" class="remove-task">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" overflow="visible" stroke="black" stroke-width="10" stroke-linecap="round">
+                            <line x2="50" y2="50" />
+                            <line x1="50" y2="50" />
+                         </svg>
+                    </button>
+                </li> -->
+            </ul>
+        </div>
+    </section>
+
+    <footer class="footer">
+            <p>© 2024 <span>WhatTODO</span>. All Rights Reserved.</p>
+            <div class="social-links">
+                <a href="http://linkedin.com/in/biproxd7" target="_blank" rel="noopener noreferrer">
+                  <i class="fab fa-linkedin"></i>
+            </div>
+    </footer>
+
+    <script src="./app.js"></script>
+</body>
