@@ -1,0 +1,385 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+body {
+  background-color: #f9f9ee;
+  font-family: "Figtree", sans-serif;
+  min-height: 100vh;
+}
+
+/* Container styles */
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header styles */
+#main-header {
+  background-color: hsl(33, 90%, 45%);
+  padding: 40px;
+  text-align: center;
+  text-align: left;
+}
+
+#main-header h1 {
+  font-size: 32px;
+  margin: 0;
+  color: #ffffff;
+  font-family: "Figtree", sans-serif;
+}
+
+#main-header span {
+    font-size: 20px;
+    margin: 0;
+    color: #ffffff;
+    padding-bottom: 5px;
+}
+
+#main-header span i {
+  font-size: 18px;
+}
+
+#todo-form {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#todo-form input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  background-color: rgba(42, 119, 167, 0.43);
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  outline: none;
+  flex-grow: 1; /* Allow the input field to grow and take up remaining space */
+  margin-right: 10px;
+  color: white;
+  height: 30px;
+}
+
+#todo-form input:hover{
+    background-color: rgba(63, 149, 203, 0.43);
+    cursor: pointer;
+}
+
+#todo-form button {
+  flex: 0 0 auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: rgb(238, 149, 32);
+  border: none;
+  border-radius: 4px;
+  color: #ffffff;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease; /* Add a smooth transition effect */
+  line-height: 30px;
+}
+
+#todo-form button:hover {
+  background-color: rgb(
+    235,
+    162,
+    67
+  ); /* Change the background color on hover */
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  #todo-form button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #main-header {
+    padding: 20px;
+  }
+
+  #main-header h1 {
+    font-size: 24px;
+  }
+
+  #todo-form input[type="text"] {
+    font-size: 14px;
+  }
+
+  #todo-form button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+
+
+
+/* Section styles */
+section {
+  padding: 20px;
+  text-align: center;
+  font-family: "Figtree", sans-serif;
+}
+
+.stats {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.stats li {
+  display: flex;
+  align-items: center;
+}
+
+.stats li:not(:last-child) {
+  margin-right: 20px; /* Add margin between the <li> elements */
+}
+
+.stats span {
+  font-size: 18px;
+  background-color: rgb(7, 7, 55);
+  padding: 5px;
+  color: rgb(241, 239, 239);
+}
+
+.stats span:last-child {
+  background-color: rgb(62, 161, 167);
+  border-radius: 0 4px 4px 0;
+  font-weight: bold;
+}
+
+.stats span:first-child {
+  background-color: rgb(7, 7, 55);
+  border-radius: 4px 0 0 4px;
+}
+
+
+.todos {
+  margin-bottom: 4rem;
+}
+
+.todos li {
+  background-color: white;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  padding: 1.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todos li div {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.todos li.complete {
+  background-color: #7799ac3d;
+  text-decoration: line-through;
+  color: rgb(87, 110, 113);
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  background-color: transparent;
+  margin: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid black;
+  border-radius: 100%;
+  display: grid;
+  place-content: center;
+  transition: all .2s ease-in-out;
+  cursor: pointer;
+}
+
+input[type="checkbox"]::before {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='currentColor' d='m9 19.414l-6.707-6.707l1.414-1.414L9 16.586L20.293 5.293l1.414 1.414z'/%3E%3C/svg%3E");
+  transform: scale(0);
+  transition: all .2s ease-in-out;
+}
+
+input[type="checkbox"]:checked {
+    background-color:  #b1cfe0;
+    border-color:  #b1cfe0;
+}
+
+input[type="checkbox"]:checked::before {
+    transform: scale(0.5);
+}
+
+.todos li button {
+    border: 0;
+    padding: 0.25rem;
+    display: grid;
+    place-content: center;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.todos li button svg {
+    stroke: #b1cfe0;
+    width: .60rem;
+    height: .60rem;
+    transition: all .2s ease-in-out;
+}
+
+.todos li button:hover svg {
+    stroke: black;
+}
+
+.todos li button:active svg {
+    transform: scale(80%);
+}
+
+.todos li span {
+    padding: 2px;
+    border-radius: 4px;
+    transition: all .2s ease-in-out;
+}
+
+.todos li span:focus {
+    background-color: #e4edef;
+    outline: none;
+}
+
+.todos li span[contenteditable]:hover{
+    background-color: #e4edef;
+}
+
+
+
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #f5f5f5;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.footer span {
+  font-weight: bold;
+}
+
+.social-links {
+  margin-top: 10px;
+}
+
+.social-links a {
+  display: inline-block;
+  margin-right: 10px;
+  color: #555555;
+  font-size: 20px;
+}
+
+.social-links a:hover {
+  color: #0077b5; /* LinkedIn blue color */
+}
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 768px){
+  .stats {
+    justify-content: space-around;
+  }
+
+.todos li button:hover svg {
+    stroke: none;
+}
+
+.todos li button:active svg {
+    transform: scale(80%);
+}
+}
+
+
+
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 10px;
+  }
+
+  .social-links {
+    margin-top: 5px;
+  }
+
+  .social-links a {
+    font-size: 18px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 10px;
+  }
+
+  .social-links {
+    margin-top: 5px;
+  }
+
+  .social-links a {
+    font-size: 18px;
+  }
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  #todo-form input[type="text"] {
+    font-size: 14px;
+  }
+
+  #todo-form button {
+    font-size: 14px;
+  }
+
+  .stats {
+    /* flex-direction: column; */
+    align-items: center;
+  }
+
+  .stats li {
+    margin-bottom: 10px;
+    margin-right: 0;
+  }
+}
